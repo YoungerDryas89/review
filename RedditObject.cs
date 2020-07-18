@@ -9,18 +9,18 @@ namespace Scarlett.RedditAssets
     {
         public String Kind;
         public Boolean IsSelf;
-        public LinkPost lnk;
-        public SelfPost sp;
+        public LinkPost Link;
+        public SelfPost Self;
         public String SerializeToJson(Boolean indent = true)
         {
             if (IsSelf)
             {
-                return JsonSerializer.Serialize<SelfPost>(sp, new JsonSerializerOptions
+                return JsonSerializer.Serialize<SelfPost>(Self, new JsonSerializerOptions
                 {
                     WriteIndented = indent
                 });
             } else {
-                return JsonSerializer.Serialize<LinkPost>(lnk, new JsonSerializerOptions
+                return JsonSerializer.Serialize<LinkPost>(Link, new JsonSerializerOptions
                 {
                     WriteIndented = indent
                 });
